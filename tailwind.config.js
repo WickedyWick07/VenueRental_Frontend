@@ -1,0 +1,17 @@
+// tailwind.config.js
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        customGreen: '#172D13',
+        customLightGreen: '#6BB77B',
+
+      },
+    },
+  },
+  plugins: [],
+}
