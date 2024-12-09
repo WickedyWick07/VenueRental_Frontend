@@ -56,7 +56,7 @@ const VenueDetails = () => {
   
       const fetchVenueDetails = async () => {
         try {
-          const response = await api.get(`venue-detail/${venueId}/`);
+          const response = await api.get(`api/venue-detail/${venueId}/`);
           setVenue(response.data);
         } catch (error) {
           console.error('Error fetching venue details:', error);
@@ -113,7 +113,7 @@ const VenueDetails = () => {
       }
       try {
        
-        const response = await api.post('book-venue/', {
+        const response = await api.post('api/book-venue/', {
           ...formData,
           user: currentUser.username,
           

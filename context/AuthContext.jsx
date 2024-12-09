@@ -62,7 +62,7 @@ export const AuthProvider = ({ children }) => {
 
     const fetchCurrentUser = async () => {
         try {
-            const response = await api.get('current-user/');
+            const response = await api.get('api/current-user/');
             console.log(response.data)
             
             setCurrentUser(response.data);
@@ -79,7 +79,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const response = await api.post('login/', { email, password });
+            const response = await api.post('api/login/', { email, password });
             if (response.data && response.data.access && response.data.refresh) {
                 setToken(response.data.access);
                 console.log(response.data)
@@ -109,7 +109,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (formData) => {
         try {
-            const response = await api.post('register/', formData);
+            const response = await api.post('api/register/', formData);
             if (response.data && response.data.access && response.data.refresh) {
                 localStorage.setItem('access_token', response.data.access);
                 localStorage.setItem('refresh_token', response.data.refresh);

@@ -26,7 +26,7 @@ const VenueView = () => {
   useEffect(() => {
     const fetchVenues = async () => {
       try {
-        const response = await api.get('venue-view/');
+        const response = await api.get('api/venue-view/');
         console.log(response.data);
         setVenue(response.data);
       } catch (error) {

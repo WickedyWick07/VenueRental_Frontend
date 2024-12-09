@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000/api/',
+    baseURL: import.meta.env.VITE_API_URL,
 });
 
 // Interceptor for requests to add Authorization header
@@ -33,7 +33,7 @@ api.interceptors.response.use(
                 const refreshToken = localStorage.getItem('refresh_token');
 
                 // Request new access token using refresh token
-                const { data } = await axios.post('http://localhost:8000/api/token/refresh/', { 
+                const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/token/refresh/`, { 
                     refresh: refreshToken 
                 });
 

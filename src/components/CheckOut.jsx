@@ -19,7 +19,7 @@ const CheckOut = () => {
     const fetchDetails = async () => {
       try {
         // Fetch booking details
-        const bookingResponse = await api.get(`booking-details/${bookingId}/`);
+        const bookingResponse = await api.get(`api/booking-details/${bookingId}/`);
         setBooking(bookingResponse.data);
 
         console.log('payment details:', payment)

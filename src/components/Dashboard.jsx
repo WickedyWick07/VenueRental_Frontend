@@ -11,11 +11,6 @@ import testimonial3 from '../assets/testimonial3.jpg'
 import api from '../../services/api';
 
 
-
-
-
-
-
 const Dashboard = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
@@ -28,7 +23,7 @@ const Dashboard = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('subscribe/', { email });
+      const response = await api.post('api/subscribe/', { email });
       if (response.status === 200) {
         setMessage('Subscription successful! Please check your email.');
       }

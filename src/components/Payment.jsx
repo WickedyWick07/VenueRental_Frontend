@@ -16,7 +16,7 @@ const Payment = () => {
     useEffect(() => {
       const fetchBooking = async () => {
         try {
-          const response = await api.get(`booking-details/${bookingId}/`)
+          const response = await api.get(`api/booking-details/${bookingId}/`)
           setBooking(response.data)
         } catch (error) {
           console.error('Error fetching booking', error)

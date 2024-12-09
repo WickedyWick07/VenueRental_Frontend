@@ -42,7 +42,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post('contact/', { email: formData.email, message: formData.message });
+      const response = await api.post('api/contact/', { email: formData.email, message: formData.message });
       if (response.status === 200) {
         setMessage('Request has been sent!');
         setFormData({

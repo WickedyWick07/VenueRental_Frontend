@@ -100,7 +100,7 @@ const PaymentForm = ({ userId, bookingId, booking, depositAmount, paymentMethod,
         };
         console.log('Sending payment data:', paymentData);
         try {
-          const response = await api.post('payment-confirmation/', paymentData );
+          const response = await api.post('api/payment-confirmation/', paymentData );
           console.log(response.data)
   
           if (response.data.status === 'success') {

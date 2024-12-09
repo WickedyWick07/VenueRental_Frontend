@@ -17,7 +17,7 @@ const ProfileView = () => {
   useEffect(() => {
     const fetchBookingHistory = async () => {
       try {
-        const response = await api.get('booking-history/')
+        const response = await api.get('api/booking-history/')
         console.log(response.data)
         setBookingHistory(response.data)
       } catch (error) {
