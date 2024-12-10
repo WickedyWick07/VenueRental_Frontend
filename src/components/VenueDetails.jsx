@@ -57,6 +57,7 @@ const VenueDetails = () => {
       const fetchVenueDetails = async () => {
         try {
           const response = await api.get(`api/venue-detail/${venueId}/`);
+          console.log(respons.data)
           setVenue(response.data);
         } catch (error) {
           console.error('Error fetching venue details:', error);
@@ -128,7 +129,7 @@ const VenueDetails = () => {
       }
     };
 
-  const apiUrl = import.meta.env.VITE_API_URL || '';
+  const apiUrl = import.meta.env.NETLIFY_URL || '';
   console.log('API URL:', apiUrl);
 
   console.log('Venue images:', venue.images);
@@ -136,10 +137,18 @@ const VenueDetails = () => {
  
   const images = venue.images 
   const getImageUrl = (image) => {
-    if (image.startsWith('/static/')) {
-      return `${apiUrl}${image}`;
+    if (image.startsWith('/static/venues/')) {
+      // Remove '/static' prefix and prepend Netlify URL
+      return `${netlifyUrl}${image.replace('/static', '')}`;
+    } else if (image.startsWith('/venues/')) {
+      // Directly prepend Netlify URL for paths starting with '/venues/'
+      return `${netlifyUrl}${image}`;
+    } else if (image.startsWith('http')) {
+      // Use full URL directly
+      return image;
     } else {
-      return `${apiUrl}/media/venue_images/${image.split('/').pop()}`;
+      // Handle other cases or fallback
+      return `${apiUrl}${image}`;
     }
   };
   
@@ -188,7 +197,7 @@ const VenueDetails = () => {
             <img
               className='w-full h-64 object-cover transition-transform duration-300 ease-in-out transform hover:scale-105'
               key={index}
-              src={`${apiUrl}${image}`}
+              src={getImageUrl(image)}
               alt={`Image ${index + 1} of ${venue.venue_name}`}
               onError={(e) => {
                 console.error(`Error loading image: ${image}`);
