@@ -139,10 +139,10 @@ const VenueDetails = () => {
   const getImageUrl = (image) => {
     if (image.startsWith('/static/venues/')) {
       // Remove '/static' prefix and prepend Netlify URL
-      return `${netlifyUrl}${image.replace('/static', '')}`;
+      return `${apiUrl}${image.replace('/static', '')}`;
     } else if (image.startsWith('/venues/')) {
       // Directly prepend Netlify URL for paths starting with '/venues/'
-      return `${netlifyUrl}${image}`;
+      return `${apiUrl}${image}`;
     } else if (image.startsWith('http')) {
       // Use full URL directly
       return image;
