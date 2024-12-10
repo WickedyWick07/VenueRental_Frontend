@@ -21,14 +21,8 @@ const CheckOut = () => {
         // Fetch booking details
         const bookingResponse = await api.get(`api/booking-details/${bookingId}/`);
         setBooking(bookingResponse.data);
-
         console.log('payment details:', payment)
-
-        // Fetch payment details only if not available in the state
-       
-
         console.log(bookingResponse.data);
-       
       } catch (error) {
         console.error('Error fetching details', error);
         setError('Error fetching details...');
