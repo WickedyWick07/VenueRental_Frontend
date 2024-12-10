@@ -32,6 +32,8 @@ const VenueDetails = () => {
     const { venueId } = useParams();
     const [venue, setVenue] = useState(null);
     const navigate = useNavigate()
+    const [expanded, setExpanded] = useState(false);
+
     const [isImageMenuOpen, setIsImageMenuOpen] = useState(false)
     const {currentUser, fetchCurrentUser, refreshToken, token}= useContext(AuthContext)
     const [isBookingOpen, setIsBookingOpen] = useState(false)
@@ -250,11 +252,19 @@ const VenueDetails = () => {
     <li className='flex items-start mb-4'>
       <i className='fas fa-info-circle text-black text-xl mr-3'></i>
       <div>
-        <h2 className='text-black text-xl font-semibold'>Description</h2>
-        <p className='text-gray-700 text-sm font-semibold'>
-          {venue.description.length > 150 ? `${venue.description.substring(0, 150)}...` : venue.description}
-        </p>
-      </div>
+      <h2 className="text-black text-xl font-semibold">Description</h2>
+      <p className="text-gray-700 text-sm font-semibold">
+        {expanded ? venue.description : venue.description.substring(0, 150)}
+        {venue.description.length > 150 && (
+          <span 
+            className="text-blue-500 cursor-pointer"
+            onClick={() => setExpanded(!expanded)}
+          >
+            {expanded ? ' show less' : '...read more'}
+          </span>
+        )}
+      </p>
+    </div>
     </li>
 
     <li className='flex items-start mb-4'>
@@ -282,7 +292,7 @@ const VenueDetails = () => {
     <h2 className='text-center text-3xl font-semibold text-black mb-6'>Booking Form</h2>
     <form 
       onSubmit={handleSubmit} 
-      className='bg-customLightGreen rounded-lg shadow-customLightGreen p-4 sm:p-6 w-full max-w-3xl mx-auto'
+      className='bg-customLightGreen rounded-lg shadow-customLightGreen p-4 sm:p-6 w-full sm:max-w-3xl sm:mx-auto'
     >
       <div className='flex flex-col mb-4'>
         <label className='text-black uppercase text-base sm:text-lg font-semibold mb-2'>Email Address</label>
