@@ -59,7 +59,6 @@ const Dashboard = () => {
         <p className='text-white text-sm'>
           Always on Top offers a wide selection of venues to suit any event, from weddings to corporate functions. Our diverse portfolio ensures you find the perfect location to make your event memorable.
         </p>
-        <button className='bg-amber-700 rounded text-white m-4 p-2'>Learn More</button>
       </div>
     </div>
     <div className='p-4 rounded'>
@@ -68,7 +67,6 @@ const Dashboard = () => {
         <p className='text-white text-sm'>
           We offer competitive pricing on all our venues, ensuring you get the best value for your budget. Our transparent pricing model means no hidden fees, making your planning stress-free.
         </p>
-        <button className='bg-amber-700 rounded text-white m-4 p-2'>Learn More</button>
       </div>
     </div>
     <div className='p-4 rounded'>
@@ -77,7 +75,6 @@ const Dashboard = () => {
         <p className='text-white text-sm'>
           Our experienced team is dedicated to helping you every step of the way, from selecting the right venue to finalizing details. We're here to ensure your event is a success.
         </p>
-        <button className='bg-amber-700 rounded text-white m-4 p-2'>Learn More</button>
       </div>
     </div>
     <div className='p-4 rounded'>
@@ -86,7 +83,6 @@ const Dashboard = () => {
         <p className='text-white text-sm'>
           Our user-friendly booking platform makes it easy to find and secure your ideal venue in just a few clicks. Manage your bookings and stay updated with our seamless online system.
         </p>
-        <button className='bg-amber-700 rounded text-white m-4 p-2'>Learn More</button>
       </div>
     </div>
   </div>

@@ -288,7 +288,7 @@ const VenueDetails = () => {
 
 
 { isBookingOpen && (
-  <section className='w-full sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto p-4 sm:p-6 bg-customLightGreen mx-32  m-4 p-6 shadow-lg rounded-lg'>
+  <section className='w-full sm:w-10/12 md:w-10/12 lg:w-9/12 mx-auto p-4 sm:p-6 bg-customLightGreen mx-32  m-4 p-6 shadow-lg rounded-lg'>
     <h2 className='text-center text-3xl font-semibold text-black mb-6'>Booking Form</h2>
     <form 
       onSubmit={handleSubmit} 
