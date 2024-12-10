@@ -131,7 +131,7 @@ const VenueDetails = () => {
       }
     };
 
-  const apiUrl = import.meta.env.NETLIFY_URL || '';
+  const apiUrl = import.meta.env.NETLIFY_URL || 'https://venueimages.netlify.app';
   console.log('API URL:', apiUrl);
 
   console.log('Venue images:', venue.images);
