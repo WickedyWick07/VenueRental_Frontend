@@ -292,7 +292,7 @@ const VenueDetails = () => {
     <h2 className='text-center text-3xl font-semibold text-black mb-6'>Booking Form</h2>
     <form 
       onSubmit={handleSubmit} 
-      className='bg-customLightGreen rounded-lg shadow-customLightGreen p-4 sm:p-6 w-full sm:max-w-3xl sm:mx-auto'
+      className='bg-customLightGreen rounded-lg shadow-customLightGreen p-4 sm:p-6 w-full sm:max-w-3xl'
     >
       <div className='flex flex-col mb-4'>
         <label className='text-black uppercase text-base sm:text-lg font-semibold mb-2'>Email Address</label>
