@@ -57,7 +57,7 @@ const VenueDetails = () => {
       const fetchVenueDetails = async () => {
         try {
           const response = await api.get(`api/venue-detail/${venueId}/`);
-          console.log(respons.data)
+          console.log(response.data)
           setVenue(response.data);
         } catch (error) {
           console.error('Error fetching venue details:', error);
@@ -70,8 +70,10 @@ const VenueDetails = () => {
       
     }, []);
   
-    if (error) return <div>Error: {error}</div>;
-    if (!venue) return <div>Loading...</div>;
+    if (error) return <div className='bg-customGreen flex items-center justify-center min-h-screen text-3xl font-semibold'>Error: {error}</div>;
+    if (!venue) return <div className='bg-customGreen flex items-center justify-center min-h-screen'>
+    <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin">Loading Venues</div>
+  </div>;
     
     
    
