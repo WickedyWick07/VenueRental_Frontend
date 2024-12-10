@@ -50,7 +50,7 @@ const ContactUs = () => {
           email: currentUser ? currentUser.email : '',
           message: ''
         });
-        navigate('dashboard/')
+        navigate('/dashboard')
       }
     } catch (error) {
       setMessage('An error occurred. Please try again.');

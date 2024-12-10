@@ -280,80 +280,147 @@ const VenueDetails = () => {
 { isBookingOpen && (
   <section className='bg-customLightGreen mx-32  m-4 p-6 shadow-lg rounded-lg'>
     <h2 className='text-center text-3xl font-semibold text-black mb-6'>Booking Form</h2>
-    <form onSubmit={handleSubmit} className='bg-customLightGreen rounded-lg shadow-customLightGreen p-6'>
-      
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Email Address</label>
-        <input type="email" readOnly placeholder='Enter your email address' value={currentUser.email} className='rounded-md border border-gray-300 p-2 text-gray-700' required />
-      </div>
+    <form onSubmit={handleSubmit} className='bg-customLightGreen rounded-lg shadow-customLightGreen p-6 max-w-3xl mx-auto'>
+  <div className='flex flex-col mb-4'>
+    <label className='text-black uppercase text-lg font-semibold mb-2'>Email Address</label>
+    <input 
+      type="email" 
+      readOnly 
+      placeholder='Enter your email address' 
+      value={currentUser.email} 
+      className='rounded-md border border-gray-300 p-2 text-gray-700' 
+      required 
+    />
+  </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Phone Number</label>
-        <input onChange={handleChange} value={formData.phone_number} type="tel" placeholder='Enter your phone number' name='phone_number' className='rounded-md border border-gray-300 p-2 text-gray-700' required />
-      </div>
+  <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4'>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Phone Number</label>
+      <input 
+        onChange={handleChange} 
+        value={formData.phone_number} 
+        type="tel" 
+        placeholder='Enter your phone number' 
+        name='phone_number' 
+        className='rounded-md border border-gray-300 p-2 text-gray-700' 
+        required 
+      />
+    </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Event Type</label>
-        <select name="event_type" value={formData.event_type} onChange={handleChange} className='rounded-md border border-gray-300 p-2 text-gray-700'>
-          {eventTypeOptions.map(option => (
-            <option key={option.value} value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </div>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Event Type</label>
+      <select 
+        name="event_type" 
+        value={formData.event_type} 
+        onChange={handleChange} 
+        className='rounded-md border border-gray-300 p-2 text-gray-700'
+      >
+        {eventTypeOptions.map(option => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Booking Date</label>
-        <input onChange={handleChange} value={formData.booking_date} type="date" className='rounded-md border border-gray-300 p-2 text-gray-700' name='booking_date' required />
-      </div>
+  <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4'>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Booking Date</label>
+      <input 
+        onChange={handleChange} 
+        value={formData.booking_date} 
+        type="date" 
+        className='rounded-md border border-gray-300 p-2 text-gray-700' 
+        name='booking_date' 
+        required 
+      />
+    </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Booking Time</label>
-        <input onChange={handleChange} value={formData.booking_time} type="time" className='rounded-md border border-gray-300 p-2 text-gray-700' name='booking_time' required />
-      </div>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Booking Time</label>
+      <input 
+        onChange={handleChange} 
+        value={formData.booking_time} 
+        type="time" 
+        className='rounded-md border border-gray-300 p-2 text-gray-700' 
+        name='booking_time' 
+        required 
+      />
+    </div>
+  </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Number of Guests</label>
-        <input onChange={handleChange} value={formData.number_of_guests} type="number" placeholder='Enter number of guests' name='number_of_guests' className='rounded-md border border-gray-300 p-2 text-gray-700' required />
-      </div>
+  <div className='flex flex-col mb-4'>
+    <label className='text-black uppercase text-lg font-semibold mb-2'>Number of Guests</label>
+    <input 
+      onChange={handleChange} 
+      value={formData.number_of_guests} 
+      type="number" 
+      placeholder='Enter number of guests' 
+      name='number_of_guests' 
+      className='rounded-md border border-gray-300 p-2 text-gray-700' 
+      required 
+    />
+  </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Special Requests</label>
-        <textarea onChange={handleChange} value={formData.special_requests} placeholder='Any special requests' name='special_requests' className='rounded-md border border-gray-300 p-2 text-gray-700' />
-      </div>
+  <div className='flex flex-col mb-4'>
+    <label className='text-black uppercase text-lg font-semibold mb-2'>Special Requests</label>
+    <textarea 
+      onChange={handleChange} 
+      value={formData.special_requests} 
+      placeholder='Any special requests' 
+      name='special_requests' 
+      className='rounded-md border border-gray-300 p-2 text-gray-700' 
+    />
+  </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Payment Method</label>
-        <select name="payment_method" value={formData.payment_method} onChange={handleChange} className='rounded-md border border-gray-300 p-2 text-gray-700'>
-          {paymentMethodOptions.map(option => (
-            <option key={option.value} value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </div>
+  <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4'>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Payment Method</label>
+      <select 
+        name="payment_method" 
+        value={formData.payment_method} 
+        onChange={handleChange} 
+        className='rounded-md border border-gray-300 p-2 text-gray-700'
+      >
+        {paymentMethodOptions.map(option => (
+          <option key={option.value} value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </div>
 
-      <div className='flex flex-col mb-4'>
-        <label className='text-black uppercase text-lg font-semibold mb-2'>Deposit Amount</label>
-        <select name='deposit_amount' value={formData.deposit_amount} onChange={handleChange} className='rounded-md border border-gray-300 p-2 text-gray-700'>
-          <option value="">Select Deposit Amount</option>
-          {DEPOSIT_AMOUNTS.map(amount => (
-            <option key={amount.value} value={amount.value}>{amount.value}</option>
-          ))}
-        </select>
-      </div>
+    <div className='flex flex-col'>
+      <label className='text-black uppercase text-lg font-semibold mb-2'>Deposit Amount</label>
+      <select 
+        name='deposit_amount' 
+        value={formData.deposit_amount} 
+        onChange={handleChange} 
+        className='rounded-md border border-gray-300 p-2 text-gray-700'
+      >
+        <option value="">Select Deposit Amount</option>
+        {DEPOSIT_AMOUNTS.map(amount => (
+          <option key={amount.value} value={amount.value}>{amount.value}</option>
+        ))}
+      </select>
+    </div>
+  </div>
 
-      <div className='flex items-center mb-4'>
-        <input type="checkbox" className='mr-2' required />
-        <label className='text-black text-lg font-semibold'>I accept the terms and conditions</label>
-      </div>
+  <div className='flex items-center mb-4'>
+    <input type="checkbox" className='mr-2' required />
+    <label className='text-black text-lg font-semibold'>I accept the terms and conditions</label>
+  </div>
 
-      <div className='flex justify-between gap-4'>
-        <button type='submit' className='bg-black text-white rounded-md p-2 font-semibold'>
-          Submit Booking
-        </button>
-        <button onClick={handleCloseForm} type='button' className='bg-gray-200 text-black rounded-md p-2 font-semibold'>
-          Close Booking Form
-        </button>
-      </div>
-    </form>
+  <div className='flex flex-wrap justify-between gap-4'>
+    <button type='submit' className='bg-black text-white rounded-md p-2 font-semibold w-full sm:w-auto'>
+      Submit Booking
+    </button>
+    <button 
+      onClick={handleCloseForm} 
+      type='button' 
+      className='bg-gray-200 text-black rounded-md p-2 font-semibold w-full sm:w-auto'
+    >
+      Close Booking Form
+    </button>
+  </div>
+</form>
   </section>
 )}
 
