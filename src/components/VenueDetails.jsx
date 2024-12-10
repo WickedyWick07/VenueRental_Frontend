@@ -429,6 +429,7 @@ const VenueDetails = () => {
         <button 
           type='submit' 
           className='bg-black text-white rounded-md p-2 font-semibold w-full sm:w-auto mb-2 sm:mb-0'
+          onClick={handleSubmit}
         >
           Submit Booking
         </button>
