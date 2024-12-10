@@ -63,38 +63,47 @@ const Payment = () => {
         <h1  className='font-bold text-center text-3xl uppercase text-white m-2 p-2'>Booking Details</h1>
         <div>
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+            <label className='text-md font-semibold'>Venue Name</label>
             <p className='text-black font-semibold text-center'>{venue.venue_name}</p>
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Booking Date</label>
             <p className='text-black font-semibold text-center'>{booking.booking_date}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Booking Time</label>
             <p className='text-black font-semibold text-center'>{booking.booking_time}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Event Type </label>
             <p className='text-black font-semibold text-center'>{booking.event_type}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Number of Guests</label>
             <p className='text-black font-semibold text-center'>{booking.number_of_guests}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Deposit Amount</label>
             <p className='text-black font-semibold text-center'>{booking.deposit_amount}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Payment Method</label>
             <p className='text-black font-semibold text-center'>{booking.payment_method}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Phone Number</label>
             <p className='text-black font-semibold text-center'>{booking.phone_number}</p>    
           </div>
           
           <div className=' m-2 p-2 border-b border-b-yellow-800 rounded-s-md text-xl '>
+          <label className='text-md font-semibold'>Special Requests</label>
             <p className='text-black font-semibold text-center'>{booking.special_requests}</p>    
           </div>
           

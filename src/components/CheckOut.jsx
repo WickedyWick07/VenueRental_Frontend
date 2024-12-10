@@ -45,7 +45,7 @@ const CheckOut = () => {
     }
   }, []);
 
-  if (isLoading) return (
+  if (loading) return (
     <div className='bg-customGreen flex items-center justify-center min-h-screen'>
       <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-500 rounded-full animate-spin"></div>
     </div>
@@ -67,7 +67,7 @@ const CheckOut = () => {
         <div>
           <div className='border-b-2 flex justify-center gap-2 items-baseline hover:translate-x-1 hover:bg-amber-700 hover:text-white border-b-amber-700 m-2 p-2 rounded-md '>
             <label className='text-md font-semibold' htmlFor="Date">Date</label>
-            <p className='text-black text-xl lowercase first-letter:uppercase hover:text-white  font-semibold text-center'>{booking.booking_date}</p>
+            <p className='text-black text-xl lowercase first-letter:uppercase hover:text-white  font-semibold text-center'> {booking.booking_date}</p>
           </div>
           <div className='border-b-2 flex justify-center gap-2 items-baseline hover:bg-amber-700  hover:translate-x-1 hover:text-white border-b-amber-700 m-2 p-2 rounded-md '>
             <label className='text-md font-semibold' htmlFor="time">Time</label>
@@ -75,9 +75,8 @@ const CheckOut = () => {
           </div>
           <div className='border-b-2 flex justify-center gap-2 items-baseline hover:bg-amber-700  hover:translate-x-1 hover:text-white border-b-amber-700 m-2 p-2 rounded-md '>
             <label className='text-md font-semibold' htmlFor="event_type">Event Type</label>
-            <p className='text-black text-xl lowercase first-letter:uppercase hover:text-white  font-semibold text-center'>{booking.event_type}</p>
-        </div></
-        div>
+            <p className='text-black text-xl lowercase first-letter:uppercase hover:text-white  font-semibold text-center'> {booking.event_type}</p>
+        </div></div>
       </section>
 
       <section className='bg-customLightGreen m-4 p-2 rounded'>
